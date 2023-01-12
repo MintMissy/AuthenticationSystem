@@ -1,27 +1,42 @@
-# AuthenticationSystem
+<h1 align="center">
+  <br>
+  <img src="./docs/image/auth.jpg" alt="" width="250">
+  <br>
+  Authentication System
+  <br>
+</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+<p align="center">Authentication system is a boilerplate code that can be used to implement login functionality to your angular application.</p>
 
-## Development server
+## Key Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Codebase was written with SOLID and DRY principles in mind
+- NgRx state management support
+- User Factory
+- Build-in user models
+- Http Interceptor
+- Authenticated & Not-authenticated guard
+- Extracted API url
 
-## Code scaffolding
+## Setup
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Copy authentication module to your application.
 
-## Build
+2. Go to `environment.ts` and `environment.ts` file and change API url to your own. If you're missing these files create them inside a new folder called `environments` located in the root of your project. Don't forget to add following code to your production configuration in `angular.json`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```json
+"fileReplacements": [
+	{
+		"replace": "src/environments/environment.ts",
+		"with": "src/environments/environment.prod.ts"
+	}
+]
+```
 
-## Running unit tests
+3. Configure authentication api service. Go to `authentication.service.ts` and setup `AuthenticationResponse` type - it should match a response data from your backend service.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+4. Go to `app-user.model.ts` and configure your `AppUser` model along with `isAppUser` function.
 
-## Running end-to-end tests
+5. Go to `user.factory.ts` and configure your user factory. User factory is a service that parses authentication response to user model.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+6. Enjoy your authentication system :)
